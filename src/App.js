@@ -1,14 +1,24 @@
+import { useState } from "react";
 import "./App.css";
 import Button from "./components/Button/Button";
 
 function App() {
-  function handleClick() {}
+  const [counter, setCounter] = useState(0);
+
+  const handlePlus =()=>{
+    setCounter(counter+1)
+  }
+
+  const handleMinus =()=>{
+    setCounter(counter-1)
+  }
+
   return (
     <div>
       <h1>Git progect</h1>
-      <h2>0</h2>
-      <Button handleClick={handleClick}>-</Button>
-      <Button handleClick={handleClick}>+</Button>
+      <h2>{counter}</h2>
+      <Button handleClick={handleMinus}>-</Button>
+      <Button handleClick={handlePlus}>+</Button>
     </div>
   );
 }
